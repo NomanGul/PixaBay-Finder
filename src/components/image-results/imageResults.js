@@ -49,7 +49,12 @@ class ImageResults extends Component {
       <FlatButton label="Close" primary={true} onClick={this.handleClose} />
     ]
 
-    return <div>{imageListContent}</div>;
+    return <div>
+    {imageListContent}
+    <Dialog 
+      
+    />
+    </div>;
   }
 }
 
