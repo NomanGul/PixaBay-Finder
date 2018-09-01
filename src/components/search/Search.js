@@ -14,20 +14,25 @@ class Search extends Component {
     images: []
   };
 
-  imageGetter = () => {
-    const { apiUrl, apiKey, searchText, amount } = this.state;
-    axios
-      .get(
-        `${apiUrl}/?key=${apiKey}&q=${searchText}&image_type=photo&per_page=${amount}&safesearch=true`
-      )
-      .then(res => this.setState({ images: res.data.hits }))
-      .catch(err => console.log(err));
-  };
-
   onTextChange = e => {
     const searchTextValue = e.target.value;
     const searchTextName = e.target.name;
-    this.setState({ [searchTextName]: searchTextValue }, this.imageGetter());
+
+    const imageGetter = () => {
+      const { apiUrl, apiKey, searchText, amount } = this.state;
+      if (searchTextValue === "") {
+        this.setState({images: []})
+      } else {
+        axios
+        .get(
+          `${apiUrl}/?key=${apiKey}&q=${searchText}&image_type=photo&per_page=${amount}&safesearch=true`
+        )
+        .then(res => this.setState({ images: res.data.hits }))
+        .catch(err => console.log(err));
+      }
+    };
+
+    this.setState({ [searchTextName]: searchTextValue }, imageGetter());
     // console.log(this.state.images);
   };
 
