@@ -2,6 +2,7 @@
   "name": "pixabay-finder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nomangul.github.io/PixaBay-Finder",
   "dependencies": {
     "@material-ui/core": "^3.0.1",
     "axios": "^0.18.0",
@@ -11,6 +12,8 @@
     "react-scripts": "1.1.5"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
