@@ -43,7 +43,7 @@ class Search extends Component {
   render() {
     const { images } = this.state;
     return (
-      <div>
+      <div className='search'>
         <TextField
           name="searchText"
           value={this.state.searchText}
