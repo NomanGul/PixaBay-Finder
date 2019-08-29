@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://nomangul.github.io/PixaBay-Finder",
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.18.1",
     "material-ui": "^0.20.2",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
